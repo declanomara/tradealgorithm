@@ -63,3 +63,11 @@ def run_experiment(num_trades, cum_pnl, mean_pnl, num_pnls, sd_pnl, t_stat, cbv,
             # Buy signal if fast EMA crosses from blow to above slow EMA - vice versa for Sell signal
             buy_signal = (not buy_signal) and (fast_ema > slow_ema) and (prev_fast_ema <= prev_slow_ema)
             sell_signal = (not sell_signal) and (fast_ema < slow_ema) and (prev_fast_ema >= prev_slow_ema)
+
+            unrealized_balance_usd = balance_usd + balance_btc * n['weighted_price']
+            prev_unrealized_pnl = unrealized_pnl
+            unrealized_pnl = (unrealized_balance_usd - STARTING_BALANCE_USD) / STARTING_BALANCE_USD
+            this_pnl = unrealized_pnl - prev_unrealized_pnl
+            #pnls.push_back(this_pnl);
+
+            cum_pnl = unrealized_pnl
