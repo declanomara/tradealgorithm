@@ -61,5 +61,5 @@ def run_experiment(num_trades, cum_pnl, mean_pnl, num_pnls, sd_pnl, t_stat, cbv,
                 balance_btc = 0
 
             # Buy signal if fast EMA crosses from blow to above slow EMA - vice versa for Sell signal
-            buy_signal = (not buy_signal) and (fast_ema > slow_ema) and (prev_fast_ema <= prev_slow_ema)
-		    sell_signal = (not sell_signal) and (fast_ema < slow_ema) and (prev_fast_ema >= prev_slow_ema)
+                buy_signal = (not buy_signal) and (fast_ema > slow_ema) and (prev_fast_ema <= prev_slow_ema)
+                sell_signal = (not sell_signal) and (fast_ema < slow_ema) and (prev_fast_ema >= prev_slow_ema)
