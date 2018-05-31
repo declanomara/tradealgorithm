@@ -213,6 +213,10 @@ void RunExperiment(long &num_trades, long double &cum_pnl, long double &mean_pnl
 	sd_pnl = sqrt(sum_sqr_delta / (long double) (num_pnls - 1));
 	t_stat = sqrt(pnls.size()) * mean_pnl / sd_pnl;
 
+	//cout << "USD: $" << balance_usd << endl;
+	//cout << "BTC: " << balance_btc << endl;
+	//cout << "Number of Trades: " << num_trades << endl;
+
 }
 
 void ShowResults(long num_trades, long double cum_pnl, long double mean_pnl, long num_pnls, long double sd_pnl, long double t_stat, double fast_ema_weight, double slow_ema_weight)
@@ -256,8 +260,9 @@ int main( int argc, char*argv[]) {
 	double fast_ema_weight = 0.00703268;
 	double slow_ema_weight = 0.00443511;
 
-
+	cout << "Running experiment" << endl;
 	RunExperiment(num_trades, cum_pnl, mean_pnl, num_pnls, sd_pnl, t_stat, cbv, fast_ema_weight, slow_ema_weight);
+	cout << "Experiment complete" << endl;
 	ShowResults(num_trades, cum_pnl, mean_pnl, num_pnls, sd_pnl, t_stat, fast_ema_weight, slow_ema_weight);
 
 	double best_fast_ema_weight = fast_ema_weight;
