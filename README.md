@@ -5,4 +5,4 @@ on the two averages crossing. More info at: [investopedia.com](https://www.inves
 
 # Usage
 To use, simply compile trade.cpp with gcc or preferred compiler (tested with  gcc), and run on oneyearofdata.csv or
-other csv file containing data in the same format. (Headers of columns showing format are in the first line of oneyearofdata.csv)
+other csv file containing data in the same format. (Headers of columns are in the first line o)
